@@ -1,0 +1,129 @@
+/* Custom Properties */
+
+:root {
+
+    --clr-gray: 212, 23%, 69%;
+    --clr-gray-light: 210, 46%, 95%;
+    --clr-gray-dark-1: 214, 17%, 51%;
+    --clr-gray-dark-2: 217, 19%, 35%;
+
+    --fs-small: 0.8125rem;
+}
+
+/* General Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+/* General Styling */
+
+body {
+    font-family: "Manrope", sans-serif;
+    color: hsl(var(--clr-gray-dark-1));
+    font-weight: 500;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
+    font-size: var(--fs-small);
+    background-color: hsl(var(--clr-gray-light));
+
+    border: 1px solid black;
+}
+
+/* Components */
+
+section.article-card {
+    display: flex;
+    flex-direction: column;
+    
+    width: 350px;
+    background-color: white;
+
+    /* border: 1px solid red; */
+}
+
+section.article-card,
+.main-img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.main-img {
+    width: 100%;
+    height: 200px;
+}
+
+.avatar {
+    width: 45px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.author-box, 
+.author-info {
+    display: flex;
+    align-items: center;
+}
+
+.author-info {
+    border: 1px solid blue;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.author-info > div {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 1em;
+    
+    /* height: 50px; */
+}
+
+/* .author-name {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+} */
+
+.author-name {
+    /* margin-left: 1em; */
+    /* margin-bottom: -.5px; */
+    font-weight: 700;
+    color: hsl(var(--clr-gray-dark-2));
+}
+
+time {
+   
+    /* margin-left: 1em; */
+    /* border: 1px solid green; */
+}
+
+.author-box {
+    justify-content: space-between;
+}
+
+article{
+    padding: 1em 2.5em;
+   
+}
+
+article > h1 {
+    font-size: 1rem;
+    color: hsl(var(--clr-gray-dark-2));
+}
+
+.share-icon {
+    padding: .85em;
+    background-color: hsl(var(--clr-gray-light));
+    border-radius: 50%;
+}
