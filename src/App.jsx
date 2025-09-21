@@ -8,7 +8,7 @@ export default function App() {
     return (
         <section className="article-card">
 
-            <div>
+            <div className="main-img-wrapper">
                 <img className="main-img" src={drawers} alt="A green bedside drawer with a flower vase and portraits on top"/>
             </div>
 
