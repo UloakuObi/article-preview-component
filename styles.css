@@ -45,7 +45,6 @@ section.article-card {
     width: 350px;
     background-color: white;
 
-    /* border: 1px solid red; */
 }
 
 @media (max-width: 1020px) {
@@ -69,7 +68,6 @@ section.article-card {
 }
 
 .author-box {
-    /* border: 1px solid red; */
     margin-top: 2em;
 
 }
@@ -81,26 +79,18 @@ section.article-card {
 }
 
 .author-info {
-    /* border: 1px solid blue; */
     justify-content: center;
 
 }
 
 .author-info > div {
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     gap: .15em;
     margin-left: 1.25em;
     
-    /* height: 50px; */
 }
 
-/* .author-name {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-} */
 
 .author-name {
     font-weight: 700;
@@ -112,10 +102,6 @@ time,
     padding: 0;
     margin: 0;
 }
-
-/* time {
-    font-size: 0.65rem;
-} */
 
 .author-box {
     justify-content: space-between;
@@ -144,27 +130,23 @@ article > p {
 @media (min-width: 1020px) {
     section.article-card {
         flex-direction: row;
-        /* min-width: clamp(60vw, 38rem,75vw); */
         width: 810px;
     }
 
     article {
         padding-bottom: 2rem;
+        padding-left: 2rem;
     }
 
     article > h1 {
-        font-size: 1.35rem;
+        font-size: 1.45rem;
     }
 
     article > p {
-        font-size: 1rem;
+        font-size: .95rem;
         line-height: 1.4;
     }
 
-
-    /* section.article-card > * {
-        flex: 1;
-    } */
 
     section.article-card {
         border-radius: 10px;
@@ -177,8 +159,6 @@ article > p {
     }
 
     .main-img {
-        /* border-top-right-radius: none;
-        border-bottom-right-radius: none; */
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -189,7 +169,6 @@ article > p {
     .main-img-wrapper {
         min-width: calc(100% - 60%);   
         min-height: 100%;   
-        /* overflow: hidden; */
     }
 
     .share-icon {
@@ -198,6 +177,56 @@ article > p {
     }
 
 
-
-
 }
+
+/* Tooltip styles */
+
+@media (hover: hover) and (pointer: fine) {
+    .tooltip-wrapper {
+        position: relative; /* important! makes tooltip position relative to this */
+        display: inline-block; /* keeps wrapper snug around the image */
+
+    }
+    
+    .tooltip {
+        display: flex;
+        gap: .85rem;
+        align-items: center;
+
+        position: absolute;
+        bottom: 145%;       /* place it above the image */
+        left: 50%;
+        transform: translateX(-50%);
+        background: hsl(var(--clr-gray-dark-2));
+        color: hsl(var(--clr-gray));
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        border-color: hsl(var(--clr-gray-dark-2));
+        white-space: nowrap;
+        margin-bottom: .5rem; /* small gap above image */
+        z-index: 10;
+        
+    }
+
+    .tooltip > span {
+        font-size: 0.95rem;
+        letter-spacing: .3em;
+    }
+
+    .tooltip > img {
+        width: 25px;
+    }
+    
+    /* little triangle tip */
+    .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;          /* stick to bottom edge of tooltip box */
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: .8rem;
+        border-style: solid;
+        border-color: hsl(var(--clr-gray-dark-2)) transparent transparent transparent;
+    }
+}
+  

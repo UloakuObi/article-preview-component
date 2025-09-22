@@ -1,10 +1,15 @@
 import avatarMichelle from "../images/avatar-michelle.jpg"
 import shareIcon from "../images/icon-share.svg"
 import drawers from "../images/drawers.jpg"
+import Tooltip from "./Tooltip.jsx"
+import { useState } from "react"
 
 
 
 export default function App() {
+
+    const [visible, setVisible] = useState(false)
+
     return (
         <section className="article-card">
 
@@ -30,7 +35,15 @@ export default function App() {
                             <time>28 Jun 2020</time>
                         </div>
                     </div>
-                    <img className="share-icon" src={shareIcon} alt="share icon"/>
+                    <div className="tooltip-wrapper">
+                        <img className="share-icon" 
+                            src={shareIcon} 
+                            onMouseOver={() => setVisible(true)} 
+                            onMouseLeave={() => setVisible(false)} 
+                            alt="share icon"
+                        />
+                    {visible && <Tooltip />}
+                    </div>
                 </div>
             </article>
 
