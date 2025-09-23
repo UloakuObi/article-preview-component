@@ -120,10 +120,23 @@ article > p {
     line-height: 1.6;
 }
 
-.share-icon {
-    padding: .85em;
+.share-icon-wrapper:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.share-icon-wrapper {
+    width: 34px;
+    height: 35px;
     background-color: hsl(var(--clr-gray-light));
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.share-icon-wrapper:hover,
+.share-icon-wrapper:focus {
+    background: hsl(var(--clr-gray-dark-2));   
 }
 
 @media (min-width: 1020px) {
@@ -170,10 +183,15 @@ article > p {
         min-height: 100%;   
     }
 
-    .share-icon {
-        padding: 1em;
+    .share-icon-wrapper{
         margin-right: .75em;
     }
+
+    /* .share-icon {
+        padding: 1em;
+        margin-right: .75em;
+    } */
+
 
 
 }

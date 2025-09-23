@@ -36,12 +36,15 @@ export default function App() {
                         </div>
                     </div>
                     <div className="tooltip-wrapper">
+                        <div className="share-icon-wrapper"
+                            onMouseEnter={() => setVisible(true)} 
+                            onMouseLeave={() => setVisible(false)} 
+                        >
                         <img className="share-icon" 
                             src={shareIcon} 
-                            onMouseOver={() => setVisible(true)} 
-                            onMouseLeave={() => setVisible(false)} 
                             alt="share icon"
                         />
+                        </div>
                     {visible && <Tooltip />}
                     </div>
                 </div>
